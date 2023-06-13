@@ -1,0 +1,704 @@
+@import './BaseLayout.scss';
+
+main{
+    padding: 3rem;
+    background-color: rgba(229, 229, 229, 0.5);
+    width: 100%;
+}
+.heading{
+    font-weight: normal;
+    color: #213F7D;
+}
+.back{
+    text-decoration: none;
+    color:  #545F7D;
+}
+.jc{
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+}
+.blacklist{
+    background-color: transparent;
+    border: 1px solid #E4033B;
+    color: #E4033B;
+    text-transform: uppercase;
+    padding: .7rem;
+    border-radius: 10px;
+    font-weight: 550;
+    margin: 0 .5rem;
+}
+.blacklist:hover{
+    border: 1px solid #E4033B;
+    background-color: #E4033B;
+    color: #fff;
+}
+.blacklisting{
+    border: 1px solid #E4033B;
+    background-color: #E4033B;
+    color: #fff;
+    text-transform: uppercase;
+    padding: .7rem;
+    border-radius: 10px;
+    font-weight: 550;
+    margin: 0 .5rem;
+    filter: brightness(50%);
+}
+.msgs{
+    position: absolute;
+    z-index: 70;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, .4);
+    display: flex;
+    left: 0;
+    justify-content: center;
+    overflow-x: hidden;
+}
+.success, .error{
+    background-color: #fff;
+    margin: auto;
+    width: 20rem;
+    height: 18rem;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 20%;
+    text-align: center;
+    color: #213F7D;
+    button{
+        display: block;
+        background-color: transparent;
+        border: none;
+        font-size: 1.5rem;
+        color: #545F7D;
+    }
+    button:hover{
+        font-size: 2rem;
+    }
+}
+.done{
+    font-size: 5rem;
+    padding: 2rem;
+    color: #39CDCC ; 
+}
+.error-icon{
+    font-size: 5rem;
+    padding: 2rem;
+    color: #E4033B;  
+}
+.activate{
+    background-color: transparent;
+    border: 1px solid #39CDCC;
+    color: #39CDCC;
+    text-transform: uppercase;
+    padding: .7rem;
+    border-radius: 10px;
+    font-weight: 550;
+    margin: 0 .5rem;
+}
+.activate:hover{
+    border: 1px solid #39CDCC;
+    background-color: #39CDCC;
+    color: #fff;
+}
+.activating{
+    text-transform: uppercase;
+    padding: .7rem;
+    border-radius: 10px;
+    font-weight: 550;
+    margin: 0 .5rem;
+    border: 1px solid #39CDCC;
+    background-color: #39CDCC;
+    color: #fff;
+    filter: brightness(50%);
+}
+.profile-div{
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 3px;
+    box-shadow: 3px 5px 20px 0px #0000000A;
+    margin: 2rem 1rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.personal-details{
+    align-self: start;
+    display: flex;
+    justify-content: start;
+}
+.info{
+    display: flex;
+    justify-content: center;
+}
+.info-pic{
+    width: 8vw; 
+  height: 8vw;
+  border-radius: 50%; 
+  overflow: hidden;
+  img{
+    width: 100%; 
+    height: auto; 
+    display: block;
+  }
+}
+.details-texts{
+    margin: 1.5rem;
+}
+.user-name{
+    font-weight: 500;
+    color: #213F7D;
+    font-size: .9rem;
+}
+.user-id{
+    font-style: normal;
+    font-weight: 400;
+    font-size: .7rem;
+    line-height: 1rem;
+    color: #545F7D;
+    margin: .5rem 0;
+}
+.line{
+background-color: #545F7D;
+width: .5px;
+height: 5rem;
+margin: 0 1rem;
+}
+.tier{
+    margin: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: .9rem;
+    color: #545F7D;
+    white-space: nowrap;
+}
+.ratings{
+    margin: .5rem 0;
+    color: #E9B200;
+}
+.finance-details{
+    padding: 1.3rem;
+    h3{
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #213F7D;
+    }
+    p{
+        font-family: 'Work Sans';
+        font-weight: 400;
+        font-size: .8rem;
+        color: #213F7D;
+        margin: .4rem 0;
+    }
+}
+.navigation{
+    padding: .7rem;
+    padding-bottom: 0;
+    margin: 0;
+    ul{
+        display: flex;
+        justify-content: space-between;
+        li{
+            list-style: none;
+            font-weight: 400;
+            font-size: .8rem;
+            padding: .7rem;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+    }
+}
+.rendered-view{
+    color: #39CDCC;
+    border-bottom: 3px solid #39CDCC;
+}
+.info-view{
+    display: none;
+}
+.info-section{
+    display: block;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 3px;
+    box-shadow: 3px 5px 20px 0px #0000000A;
+    padding-bottom: 0;
+    margin: 2rem 1rem;
+}
+.personal-section{
+    padding: 1rem;
+    border-bottom: 1px solid rgba(33, 63, 125, 0.2);
+}
+.details-jc{
+    display: flex;
+    justify-content: safe;
+    flex-wrap: wrap;
+}
+.info-heading{
+    font-weight: 500;
+    font-size: 1rem;
+    color: #213F7D;
+}
+.details{
+    padding: .8rem 2.4rem;
+}
+.detail-head{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: .8rem;
+    padding: .5rem 0;
+    text-transform: uppercase;
+    color: rgba(84, 95, 125, 0.7);
+}
+.detail-info{
+    font-weight: 500;
+    font-size: 1rem;
+    color: #545F7D;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .heading{
+        font-size: 1.3rem;
+    }
+    .details-texts{
+        margin: 1.5rem 1rem;
+    }
+    .profile-div{
+        padding: 1.5rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .user-name{
+        font-size: .8rem;
+    }
+    .line{
+     height: 4.4rem;
+     margin: 0.8rem;
+    }
+    .tier{
+        font-size: .8rem;
+    }
+    .finance-details {
+        p{
+            font-size: .65rem;
+        }
+        h3{
+            font-size: .9rem;
+        }  
+    }
+    .navigation > ul > li {
+        ul{
+            li{
+                font-size: .75rem;
+            }
+        }
+    }
+    .info-section{
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 3px;
+        box-shadow: 3px 5px 20px 0px #0000000A;
+        padding-bottom: 0;
+        margin: 2rem 1rem;
+    }
+    .info-heading{
+        font-size: .85rem;
+    }
+    .details{
+        padding: .8rem 2.5rem;
+    }
+    .detail-head{
+        font-weight: 400;
+        font-size: .65rem;
+        padding: .5rem 0;
+    }
+    .detail-info{
+        font-size: .83rem;
+    }
+  } 
+@media screen and (max-width: 958px) {
+    .blacklist, .blacklisting{
+        padding: .5rem;
+        font-weight: 550;
+       font-size: .8rem;
+    }
+    .activate, .activating{
+        padding: .5rem;
+        font-weight: 550;
+       font-size: .8rem;
+    }
+    .profile-div{
+        padding: .8rem;
+        margin: 1.5rem 1rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    .details-texts{
+        margin: 1rem;
+    }
+    .user-name{
+        padding-top: .5rem;
+       font-size: .8rem;
+    }
+    .user-id{
+        font-size: .65rem;
+    }
+    .line{
+        margin-top: .8rem;
+         height: 4rem;
+    }
+    .finance-details {
+        p{
+            font-size: .72rem;
+        }
+        h3{
+            font-size:.82rem ;
+        }
+    } 
+    .navigation{
+        padding: .1rem;
+        ul{
+            li{
+                font-size: .63rem;
+                padding: .7rem;
+            }
+        }
+    }
+    .info-section{
+        padding: 1rem;
+    }
+    .info-heading{
+        font-size: .8rem;
+    }
+    .details{
+        padding: .8rem 1.6rem;
+    }
+    .detail-head{
+        font-size: .67rem;
+    }
+    .detail-info{
+        font-size: .8rem;
+    }
+    .info-pic{
+        margin: 0.2rem;
+        width: 10vw; 
+        height: 10vw;
+        border-radius: 50%; 
+        overflow: hidden;
+      img{
+        width: 100%; 
+        height: auto; 
+        display: block;
+      }
+    }
+    .msgs{
+        width: 105vw;
+        height: 105vh;
+    }
+  } 
+@media screen and (max-width: 800px) {
+    .profile-div{
+        padding:.5rem .2rem;
+        margin: 2rem .3rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    .details-texts{
+        margin: 1rem .5rem;
+    }
+    .user-name{
+       font-size: .8rem;
+    }
+    .user-id{
+        font-size: .65rem;
+    }
+    .line{
+        margin: 0 .6rem;
+        margin-top: .8rem;
+         height: 4rem;
+    }
+    .finance-details {
+        p{
+            font-size: .75rem;
+        }    
+    }
+    .navigation{
+        padding: .1rem;
+        ul{
+            li{
+                font-size: .7rem;
+                padding: .5rem;
+            }
+        }
+    }
+    .info-section{
+        padding: 1.3rem;
+    }
+    .info-heading{
+        font-size: .75rem;
+    }
+    .details{
+        padding: .5rem 1rem;
+    }
+    .detail-head{
+        font-size: .6rem;
+    }
+    .detail-info{
+        font-size: .7rem;
+    }
+    .info-pic{
+        margin-top: 0.7rem;
+        width: 10vw; 
+        height: 10vw;
+    }
+  } 
+@media screen and (max-width: 660px) {
+    .profile-div{
+        padding:.5rem .5rem;
+        margin: 1.5rem .2rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    .details-texts{
+        margin: 1rem .5rem;
+    }
+    .user-name{
+       font-size: .65rem;
+    }
+    .user-id{
+        font-size: .55rem;
+    }
+    .line{
+        margin: .3rem .5rem;
+        margin-top: .8rem;
+         height: 3.5rem;
+        margin-left: .3rem;
+    }
+    .finance-details {
+        p{
+            font-size: .6rem;
+        }
+        h3{
+            font-size: .7rem;
+        }    
+    }
+    .navigation{
+        padding: .1rem;
+        ul{
+            li{
+                font-size: .55rem;
+                padding: .5rem;
+            }
+        }
+    }
+    .info-section{
+        padding: 1rem;
+    }
+    .info-heading{
+        font-size: .7rem;
+    }
+    .details{
+        padding: .5rem .8rem;
+    }
+    .detail-head{
+        font-size: .48rem;
+    }
+    .detail-info{
+        font-size: .5rem;
+    }
+    .heading{
+        font-size: .85rem;
+    }
+    .back{
+        font-size: .85rem;
+    }
+    .blacklist, .blacklisting{
+        padding: .3rem;
+        border-radius: 7px;
+        margin: 0 .5rem;
+        font-size: .67rem;
+    }
+     .activate, .activating{
+    padding: .3rem;
+    border-radius: 7px;
+    margin: 0 .5rem;
+    font-size: .67rem;
+    }
+    .info-pic{
+        margin-top: 0.7rem;
+        width: 12vw; 
+        height: 11vw;
+    }
+    .success, .error{
+        font-size: .8rem;
+        width: 18rem;
+        height: 18rem;
+        border-radius: 8px;
+        margin-top: 25%;
+    }
+}
+@media screen and (max-width: 550px) {
+    .profile-div{
+        padding:.5rem .2rem;
+        margin: 1.5rem .2rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .details-texts{
+        margin: 1rem .5rem;
+    }
+    .user-name{
+       font-size: .6rem;
+    }
+    .user-id{
+        font-size: .5rem;
+    }
+    .tier{
+        font-size: .6rem;
+    }
+    .line{
+        margin-top: .8rem;
+         height: 3.5rem;
+    }
+    .finaance-details {
+        p{
+            font-size: .6rem;
+        }
+        h3{
+            font-size: .7rem;
+        }  
+    }
+    .navigation{
+        padding: .1rem;
+        ul{
+            li{
+                font-size: .5rem;
+                padding: .5rem;
+            }
+        }
+    }
+    .info-section{
+        padding: 1rem;
+    }
+    .info-heading{
+        font-size: .7rem;
+    }
+    .details{
+        padding: .5rem .8rem;
+    }
+    .detail-head{
+        font-size: .48rem;
+    }
+    .detail-info{
+        font-size: .5rem;
+    }
+    .info-pic{
+        margin-top: 0.9rem;
+        width: 13vw; 
+        height: 11vw;
+    }
+    .msgs{
+        width: 115vw;
+        height: 120vh;
+    }
+
+  } 
+@media screen and (max-width: 480px) {
+    .heading{
+        font-size: .7rem;
+        margin-right: 0.2rem;
+    }
+    .blacklist, .blacklisting{
+        font-size: .55rem;
+        padding: .3rem;
+        margin: .3rem .3rem;
+        margin-top: 0.6rem;
+    }
+    .activate, .activating{
+        font-size: .55rem;
+        padding: .3rem;
+        margin: .3rem .3rem;
+        margin-top: 0.6rem;
+    }
+    .jc{
+        flex-wrap: wrap;
+    }
+    .profile-div{
+        padding:.5rem .2rem;
+        margin: 1rem .2rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        width: 82vw;
+    }
+    .details-texts{
+        margin: 1rem .5rem;
+    }
+    .personal-details{
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+    .user-name{
+       font-size: .7rem;
+       white-space: nowrap;
+    }
+    .user-id{
+        font-size: .5rem;
+    }
+    .line{
+        margin-top: .8rem;
+        height: 3.5rem;
+        margin: 0;
+        display: block;
+        display: none;
+    }
+    .tier{
+        font-size: .6rem;
+    }
+    .finance-details {
+        padding-top: 0;
+        p{
+            font-size: .6rem;
+        }
+        h3{
+            font-size: .7rem;
+        }  
+    }
+    .navigation{
+        ul{
+            li{
+                font-size: .38rem;
+                padding: .3rem;
+            }
+        }
+    }
+    .info-section{
+        padding: 1rem;
+        width: 78vw;
+    }
+    .info-heading{
+        font-size: .7rem;
+    }
+    .details{
+        padding: .5rem .8rem;
+    }
+    .detail-head{
+        font-size: .48rem;
+    }
+    .detail-info{
+        font-size: .5rem;
+    }
+    .info-pic{
+        margin-top: 0.9rem;
+        width: 13vw; 
+        height: 13vw;
+    }
+    .msgs{
+        width: 125vw;
+    }
+    .success, .error{
+        margin-top: 50%;
+    }
+  } 

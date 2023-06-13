@@ -1,0 +1,430 @@
+$primary-color: #39CDCC;
+$text-color: #213F7D;
+$secondary-color: rgba(33, 63, 125, 0.7);
+$light-gray: rgba(84, 95, 125, 0.5);
+$light-blue: rgba(57, 205, 204, 0.08);
+$dark-gray: #545F7D;
+$box-shadow: 3px 5px 20px 6px #0000000a;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+/* HEADER SECTION */
+header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    box-shadow: $box-shadow;
+    z-index: 20;
+}
+.mobile-header{
+    display: none;
+}
+.logo{
+    display: flex;
+    justify-content: safe;
+}
+.logo > img{
+    object-fit: contain;
+    margin-left: .8rem;
+}
+.search{
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    input{
+        width: 20vw;
+        display: block;
+        padding: 1rem;
+        border: 1.5px solid $light-gray;
+        color: $dark-gray;
+        border-right: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    input:focus{
+        outline: none;
+    }
+}
+.search-btn{
+    display: block;
+    background-color: $primary-color;
+    border: none;
+    padding: 1rem;
+    padding-top: .7rem;
+    height: 5vh;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+}
+.profile-info{
+    display: flex;
+    justify-content: space-between;
+    .profile-link{
+        margin: 0.7rem;
+        color: $text-color;
+    }
+}
+.profile{
+    display: flex;
+    justify-content: center;
+    img{
+        object-fit: cover;
+        border-radius: 50%;
+        margin:0 0.5rem;
+    }
+    h3{
+    margin: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: $text-color;
+    }
+}
+.body{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6rem;
+}
+/* SIDE BAR SECTION */
+.sidebar{
+    width: 15rem;
+    box-shadow: $box-shadow;
+}
+menu{
+    ul{
+        li{
+            list-style: none;
+            margin: .4rem 0;
+        }
+    }
+}
+.Link{
+    display: block;
+    text-decoration: none;
+    color: rgba(33, 63, 125, 0.7);
+    padding: .6rem 2rem;
+    font-size: .9rem;
+}
+.Link:hover{
+    border-left: .3rem solid #39CDCC;
+    color: $text-color;
+    background-color: $light-blue;
+}
+.menue-title{
+    font-size: .78rem;
+     margin: 1.2rem 1.6rem;
+     font-weight: 600;
+    text-transform: uppercase;
+    color: $dark-gray;
+}
+.awe{
+    margin-right: .5rem;
+}
+.switch{
+    margin: 2rem;
+    button{
+        background-color: transparent;
+        border: none;
+        color: $dark-gray;
+    }
+}
+.sidebar-mobile{
+    display: none;
+}
+.search-visible{
+    display: none;
+}
+.rendered-nav{
+    border-left: .3rem solid #39CDCC;
+    color: $text-color;
+    background-color: $light-blue;
+}
+@media screen and (max-width: 1280px) {
+    /* HEADER SECTION */
+.body{
+    padding-top: 5rem;
+}
+.sidebar{
+    width: 15rem;
+    box-shadow: $box-shadow;
+}
+}
+@media screen and (max-width: 1200px) {
+    /* HEADER SECTION */
+    .search-btn{
+       height: 5vh;
+        padding-top: .6rem;
+    }
+    /* SIDE BAR SECTION */
+    .sidebar{
+        width: 14rem;
+    }
+    .menu > ul > li{  
+        margin: .3rem 0;
+        .Link{
+            padding: .4rem 1.5rem;
+            font-size: .75rem;
+        }
+    }
+    .menue-title{
+        margin: 1.4rem;
+        font-size: .7rem;
+    }
+    .switch{
+        margin: 2rem auto;
+        margin-left: .5rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+    /* HEADER SECTION */
+    .search-btn{
+       height: 5vh;
+        padding-top: .6rem;
+    }
+    /* SIDE BAR SECTION */
+    .sidebar{
+        width: 13rem;
+    }
+    .menu > ul > li{  
+        margin: .2rem 0;
+        .Link{
+        padding: .4rem 1.4rem;
+        font-size: .7rem;
+        }
+    }
+    .menue-title{
+        margin: 1.3rem;
+        font-size: .7rem;
+    }
+    .switch{
+        margin: 2rem auto;
+        margin-left: .4rem;
+    }
+  } 
+@media screen and (max-width: 986px) {
+    .profile-link {
+        font-size: .8rem;
+    }
+    .name{
+        font-size: 0.89rem;
+    }
+     /* SIDE BAR SECTION */
+     .sidebar{
+         width: 12rem;
+     }
+     .search{
+        height: 5.5vh;
+        display: flex;
+        justify-content: center;
+        border-radius: 5px;
+        input{
+            width: 23vw;
+            display: block;
+            padding: 1rem;
+            border: 1.5px solid $light-gray;
+            color: $dark-gray;
+            border-right: none;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        input:focus{
+            outline: none;
+        }
+    }
+    .search-btn{
+        display: block;
+        background-color: $primary-color;
+        border: none;
+        padding: 1rem;
+        padding-top: .7rem;
+        color: white;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        text-align: center;
+        height: 5.5vh;
+    }
+
+     .menu > ul > li{  
+         margin: .1rem 0;
+         .Link{
+            padding: .4rem 1.2rem;
+            font-size: .7rem;
+         }
+     }
+     .menue-title{
+         margin: 1.3rem;
+         font-size: .7rem;
+     }
+     .switch{
+         margin: 2rem auto;
+         margin-left: .4rem;
+     }
+     .switch > button{
+         font-size: .6rem;
+     }
+  } 
+@media screen and (max-width: 798px) {
+    header{
+        padding: 1.1rem;
+    }
+    .logo > img{
+        margin-left: .5rem;
+    }
+    .profile-info > Link{
+        font-size: .8rem;
+    }
+    .profile> Link{
+        font-size: .8rem;
+    } 
+    .body{
+        position: relative;
+        padding-top: 5.3rem;
+    }
+    .heading{
+        font-size: 1.1rem;
+        margin-left: 1rem;
+    }
+    .sidebar{
+        display: none;
+    }
+    .sidebar-mobile{
+        display: block;
+        box-shadow: $box-shadow; 
+        padding-top: 1.5rem;
+    }
+    .res-nav > li{  
+        list-style: none;
+        margin: .4rem 0;
+    }
+    .res-nav > li> .Link {
+        display: block;
+        text-decoration: none;
+        color: rgba(33, 63, 125, 0.7);
+        padding: .4rem 1.5rem;
+        font-size: .6rem;
+    }
+    .same:hover{
+        
+        .sidebar{
+            background-color: #fff;
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 15rem;
+        }
+
+    }
+  }  
+@media screen and (max-width: 700px) {
+    header{
+        display: none;
+        padding: .6rem;
+    }
+    .mobile-header{
+        display: block;
+    }
+    .res-jc{
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem;
+    }
+   .mobile-nav{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 2rem;
+   }
+   .mobile-nav > li{
+    margin-left: 1.2rem;
+    color: #213F7D;
+    font-size: 1.3rem;
+   }
+    .logo > img{
+        margin-left: .5rem;
+    }
+    .profile-info {
+        position: absolute;
+        right: 1%;
+        background-color: #fff;
+        box-shadow: $box-shadow;
+        padding: 1rem;
+        .profile-link{
+            font-size: .8rem;
+        }  
+    }
+    .profile{
+        .name{
+            margin-top: 1rem;
+            font-size: .8rem;
+        }  
+    } 
+    .search-bar-mobile{
+        display: flex;
+        position: absolute;
+        right: 13%;
+        top: 22%;
+        input{
+            width: 35vw;
+            height: 7vw;
+        } 
+        button{
+            padding: 1rem;
+            font-size: 1rem;
+            height: 7vw;
+        } 
+    }
+    .body{
+        position: relative;
+        padding-top: 5.3rem;
+    }
+    main{
+        padding: 0;
+    }
+    .sidebar{
+        display: none;
+        margin-right: 0;
+    }
+    .sidebar-mobile{
+        display: block;
+        box-shadow: $box-shadow; 
+        padding-top: 1.5rem;
+    }
+    .res-nav > li{  
+        list-style: none;
+        margin: .4rem 0;
+    }
+    .res-nav > li> .Link {
+        display: block;
+        text-decoration: none;
+        color: rgba(33, 63, 125, 0.7);
+        padding: .4rem 1.5rem;
+        font-size: .6rem;
+    }
+    .same:hover{
+        
+        .sidebar{
+            background-color: #fff;
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 15rem;
+        }
+
+    }
+  } 
+@media screen and (max-width: 600px) {
+    .sidebar{
+        width: 3.5rem;
+        padding-top: 2.5rem;
+    }
+  } 
