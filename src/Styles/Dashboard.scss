@@ -94,12 +94,13 @@ th{
     padding: .3rem .5rem;
     border: #545F7D0A 1.5px solid;
     border-radius: 4px;
-    top: 45%;
-    right: 57%;
+    top: 53%;
+    right: 60%;
     z-index: 70;
 }
 .input-div{
     padding: .4rem;
+    margin: 0.3rem;
     label{
         color: $dark-gray;
         font-size: .67rem;
@@ -108,8 +109,8 @@ th{
 .filter-input{
     display: block;
     width: 15vw;
-    height: 2.2rem;
-    padding: .3rem;
+    height: 2.3rem;
+    padding: .4rem;
     border: 1px solid rgba(33, 63, 125, .3);
     border-radius: 8px;
     color:rgba(84, 95, 125, .5);
@@ -149,7 +150,7 @@ table, td{
 td{
     font-size: .8rem;
     text-align: left;
-    padding: 1.4rem .7rem;
+    padding: 1rem .7rem;
     color: rgba(84, 95, 125, .8);
     width: auto;
 
@@ -355,13 +356,41 @@ td{
         padding: .5rem;
     }
     .filter-div{
-        right: 56%;
-        top: 55%;
+        right: 58%;
+        top: 56%;
+        padding: .3rem ;
     }
     .toggle-user{
         width: 9rem;
         right: 2%;
+    }
+    .input-div{
+        padding: .3rem;
+        label{
+            font-size: .6rem;
         }
+    }
+    .filter-input{
+        width: 12vw;
+        height: 2rem;
+        padding: .3rem;
+        font-size: 0.67rem;
+    }
+    .filter{
+        background-color: $primary-color;
+        border: none;
+        color: #fff;
+        padding: .5rem;
+        border-radius: 8px;
+        width: 8vh;
+    }
+    .reset{
+        background-color: transparent;
+        border: 1px solid $dark-gray;
+        padding: .5rem;
+        border-radius: 8px;
+        width: 8vh;
+    }
   } 
 @media screen and (max-width: 850px) {
    .status-box{
@@ -381,8 +410,40 @@ td{
    .toggle-user{
     right: 2%;
     }
+    .filter-div{
+        right: 50%;
+        top: 55%;
+        padding: .3rem ;
+    }
+    .input-div{
+        padding: .3rem;
+        label{
+            font-size: .5rem;
+        }
+    }
+    .filter-input{
+        width: 14vw;
+        height: 2rem;
+        padding: .3rem;
+        font-size: 0.67rem;
+    }
+    .filter{
+        background-color: $primary-color;
+        border: none;
+        color: #fff;
+        padding: .4rem;
+        border-radius: 8px;
+        width: 7vh;
+    }
+    .reset{
+        background-color: transparent;
+        border: 1px solid $dark-gray;
+        padding: .4rem;
+        border-radius: 8px;
+        width: 7vh;
+    }
   }   
-@media screen and (max-width: 758px) {
+@media screen and (max-width: 798px) {
     .status-box{
         width: 12rem;
         font-size: .7rem;
@@ -415,20 +476,20 @@ td{
         padding: .4rem .1rem;
         border: #545F7D0A 1.5px solid;
         border-radius: 4px;
-        top: 40%;
-        right: 62%;
+        top: 45%;
+        right: 60%;
     }
     .input-div{
-        padding: .4rem;
+        padding: .2rem;
         label{
             color: $dark-gray;
-            font-size: .6rem;
+            font-size: .5rem;
         }
     }
     .filter-input{
         display: block;
-        width: 22vw;
-        height: 2rem;
+        width: 16vw;
+        height: 1.7rem;
         padding: .3rem;
         border: 1px solid rgba(33, 63, 125, .3);
         border-radius: 8px;
@@ -443,14 +504,14 @@ td{
         background-color: $primary-color;
         border: none;
         color: #fff;
-        padding: .5rem;
+        padding: .3rem;
         border-radius: 8px;
         width: 7vh;
     }
     .reset{
         background-color: transparent;
         border: 1px solid $dark-gray;
-        padding: .5rem;
+        padding: .3rem;
         border-radius: 8px;
         width: 7vh;
     }
@@ -600,19 +661,21 @@ td{
     }
     .filter-div{
         display: block;
-        padding: .2rem .2rem;
-        top: 54%;
-        right: 58%;
+        padding: .1rem ;
+        top: 57%;
+        right: 60%;
     }
     .input-div{
+        padding: 0.2rem;
+        margin: 0.1rem;
         label{
-            font-size: .43rem;
+            font-size: .4rem;
         }
     }
     .filter-input{
         display: block;
-        width: 20vw;
-        height: 1.5rem;
+        width: 15vw;
+        height: 1.3rem;
         padding: .2rem;
         border-radius: 6px;
         font-size: .5rem;
@@ -621,19 +684,28 @@ td{
         margin: 0.4rem;
     }
     .filter{
-        padding: .3rem;
+        padding: .2rem;
         border-radius: 6px;
-        width: 6vh;
+        width: 5.7vh;
         font-size: .5rem;
     }
     .reset{
-        padding: .3rem;
+        padding: .2rem;
         border-radius: 6px;
-        width: 6vh;
+        width: 5.7vh;
         font-size: .5rem;
     }
   } 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 585px) {
+
+    .filter-div{
+        display: block;
+        padding: .1rem ;
+        top: 54%;
+        right: 60%;
+    }
+  } 
+@media screen and (max-width: 531px) {
     .status{
         flex-wrap: wrap;
     }
@@ -708,8 +780,8 @@ td{
     .filter-div{
         display: block;
         padding: .2rem .2rem;
-        top: 54%;
-        right: 58%;
+        top: 56%;
+        right: 52%;
     }
     .input-div{
         label{
@@ -741,7 +813,7 @@ td{
     }
 
   } 
-@media screen and (max-width: 481px) {
+@media screen and (max-width: 490px) {
     .status{
         flex-wrap: wrap;
     }
@@ -820,7 +892,7 @@ td{
     .filter-div{
         display: block;
         padding: .2rem .2rem;
-        top: 48% ;
+        top: 57% ;
         right: 58%;
     }
     .input-div{
@@ -864,13 +936,37 @@ td{
         }
     }
   } 
+@media screen and (max-width: 470px) {
+    .filter-div{
+        display: block;
+        padding: .2rem .2rem;
+        top: 55% ;
+        right: 58%;
+    }
+  } 
+@media screen and (max-width: 465px) {
+    .filter-div{
+        display: block;
+        padding: .2rem .2rem;
+        top: 50% ;
+        right: 56%;
+    }
+  } 
+@media screen and (max-width: 435px) {
+    .filter-div{
+        display: block;
+        padding: .2rem .2rem;
+        top: 48% ;
+        right: 54%;
+    }
+  } 
 @media screen and (max-width: 400px) {
    
     .filter-div{
         display: block;
         padding: .2rem .2rem;
-        top: 46% ;
-        right: 35%;
+        top: 49% ;
+        right: 42%;
     }
     .input-div{
         label{
@@ -879,7 +975,7 @@ td{
     }
     .filter-input{
         display: block;
-        width: 28vw;
+        width: 25vw;
         height: 1.3rem;
         padding: .2rem;
         border-radius: 6px;
