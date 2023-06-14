@@ -316,10 +316,12 @@ td{
     .count-info> button{
         padding: .2rem;
     }
-  .toggle-user{
-    left: 0;
-    right: 2%;
-  }
+    .toggle-user{
+        right: 2%;
+        // left: 85%;
+        padding: .3rem ;
+        width: 13vw;
+    }
   } 
 @media screen and (max-width: 1024px) {
     /* MAIN SECTION FOR RENDERED VIEW */
@@ -391,6 +393,12 @@ td{
         border-radius: 8px;
         width: 8vh;
     }
+    .toggle-user{
+        right: 0;
+        left: 85%;
+        padding: .3rem ;
+        width: 14vw;
+    }
   } 
 @media screen and (max-width: 850px) {
    .status-box{
@@ -442,6 +450,13 @@ td{
         border-radius: 8px;
         width: 7vh;
     }
+    .toggle-user{
+        right: 0;
+        left: 93%;
+        padding: .3rem ;
+        width: 17vw;
+    }
+
   }   
 @media screen and (max-width: 798px) {
     .status-box{
@@ -515,6 +530,12 @@ td{
         border-radius: 8px;
         width: 7vh;
     }
+    .toggle-user{
+        right: 0;
+        left: 85%;
+        padding: .3rem ;
+        width: 17vw;
+    }
 
   }
 @media screen and (max-width: 700px) {
@@ -582,6 +603,12 @@ td{
         background-color: rgba(33, 63, 125, 0.1);
         border-radius: 4px;
         }
+    }
+    .toggle-user{
+        right: 0;
+        left: 80%;
+        padding: .3rem ;
+        width: 15.5vw;
     }
 
   }  
@@ -695,6 +722,12 @@ td{
         width: 5.7vh;
         font-size: .5rem;
     }
+    .toggle-user{
+        right: 0;
+        left: 75%;
+        padding: .3rem ;
+        width: 18vw;
+    }
   } 
 @media screen and (max-width: 585px) {
 
@@ -703,6 +736,12 @@ td{
         padding: .1rem ;
         top: 54%;
         right: 60%;
+    }
+    .toggle-user{
+        right: 0;
+        left: 75%;
+        padding: .3rem ;
+        width: 21vw;
     }
   } 
 @media screen and (max-width: 531px) {
@@ -810,6 +849,12 @@ td{
         border-radius: 6px;
         width: 6vh;
         font-size: .5rem;
+    }
+    .toggle-user{
+        right: 0;
+        left: 75%;
+        padding: .3rem ;
+        width: 25vw;
     }
 
   } 
@@ -935,6 +980,12 @@ td{
             margin: 0 .3rem;
         }
     }
+    .toggle-user{
+        right: 0;
+        left: 68%;
+        padding: .3rem ;
+        width: 25vw;
+    }
   } 
 @media screen and (max-width: 470px) {
     .filter-div{
@@ -942,6 +993,12 @@ td{
         padding: .2rem .2rem;
         top: 55% ;
         right: 58%;
+    }
+    .toggle-user{
+        right: 0;
+        left: 68%;
+        padding: .3rem ;
+        width: 25vw;
     }
   } 
 @media screen and (max-width: 465px) {
@@ -951,6 +1008,12 @@ td{
         top: 50% ;
         right: 56%;
     }
+    .toggle-user{
+        right: 0;
+        left: 65%;
+        padding: .3rem ;
+        width: 25vw;
+    }
   } 
 @media screen and (max-width: 435px) {
     .filter-div{
@@ -958,6 +1021,12 @@ td{
         padding: .2rem .2rem;
         top: 48% ;
         right: 54%;
+    }
+    .toggle-user{
+        right: 0;
+        left: 65%;
+        padding: .3rem ;
+        width: 25vw;
     }
   } 
 @media screen and (max-width: 400px) {
@@ -981,4 +1050,5 @@ td{
         border-radius: 6px;
         font-size: .5rem;
     }
+    
   } 
