@@ -160,9 +160,9 @@ const UserRecord: FC<UserRecordProps> = ({users}) => {
         setCurrentPage(1);
       };
 
-    const startIndex = currentPage * itemsPerPage; // 1 * 8 = 8
-    const endIndex = startIndex ; // 8 + 8 = 16
-    const currentUsers = allUsers?.slice(currentPage - 1, endIndex); 
+    const startIndex = (currentPage - 1) * itemsPerPage; // 1 * 8 = 8
+    const endIndex = startIndex + itemsPerPage; // 8 + 8 = 16
+    const currentUsers = allUsers.slice(startIndex, endIndex);
     const itemIndex = itemsPerPage * currentPage
     let indexpage = 1;
     console.log(allUsers, 'userdff');
@@ -175,11 +175,11 @@ const UserRecord: FC<UserRecordProps> = ({users}) => {
     }
 
     const handlePreviousPage = () => {
-        setCurrentPage((prevPage) => prevPage - 1);
+        setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
       };
     
     const handleNextPage = () => {
-        setCurrentPage((prevPage) => prevPage + 1);
+        setCurrentPage((prevPage) => Math.min(prevPage + 1, pages));
         indexpage --
     };
 
