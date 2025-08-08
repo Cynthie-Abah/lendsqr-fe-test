@@ -200,6 +200,7 @@ const UserRecord: FC<UserRecordProps> = ({users}) => {
        
     return (
         <>
+        <div className="table-wrapper">
             <div className="info-table">
                 <table>
                     <thead>
@@ -425,7 +426,7 @@ const UserRecord: FC<UserRecordProps> = ({users}) => {
                     </div>
             </div>
             </div>
-            
+            </div>
         </>
     );
 }

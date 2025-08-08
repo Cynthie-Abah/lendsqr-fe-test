@@ -32,22 +32,23 @@ const Login: FC<LoginProps> = () => {
     const checkInfo = async () => {
         try {
             setIsLoading(true)
-            const response = await axios.get('https://run.mocky.io/v3/aac9d9de-41b4-47f0-820e-35dc016a1bb8');
-            const clients = response.data.clients
-            console.log(clients);
+            // const response = await axios.get('https://run.mocky.io/v3/aac9d9de-41b4-47f0-820e-35dc016a1bb8');
+            // const clients = response.data.clients
+            // console.log(clients);
             
-            clients.forEach((element: { email: string; password: string; id: number }) => {
+            // clients.forEach((element: { email: string; password: string; id: number }) => {
             
-                if (email == element.email && password == element.password) {
+                // if (email == element.email && password == element.password) {
                     setIsLoading(false)
-                    localStorage.setItem('id', element.id.toString());
+                    // localStorage.setItem('id', element.id.toString());
                     navigate('/dashboard');
                     setCheck('')
-                } else {
-                    setCheck('Oops! You are currently not signed up on Pecunia, kindly click on the "sign up" button in your email to get started')
-                    setIsLoading(false)
-                }
-            });
+                // } 
+                // else {
+                //     setCheck('Oops! You are currently not signed up on Pecunia, kindly click on the "sign up" button in your email to get started')
+                //     setIsLoading(false)
+                // }
+            // });
             // <Dashboard email={email} id={id} />  
         } catch (error) {
             console.error('Error fetching data:', error);

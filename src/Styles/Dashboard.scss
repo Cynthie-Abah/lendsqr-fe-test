@@ -35,6 +35,21 @@ main{
     box-shadow: $box-shadow;
     margin-right: 3rem;
 }
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  // Optional scrollbar style
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+}
 .icon{
     background-color: rgba(223, 24, 255, 0.3);
     width: 2.5rem;
@@ -250,7 +265,9 @@ td{
 .filter-display{
     display: none;
 }
-
+table {
+  min-width: 600px;
+}
 @media screen and (max-width: 1280px) {
     /* MAIN SECTION FOR RENDERED VIEW */ 
 .status-box{

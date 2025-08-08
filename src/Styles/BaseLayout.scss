@@ -94,12 +94,27 @@ header{
     display: flex;
     justify-content: space-between;
     padding-top: 6rem;
+    height: 100vh;        
+    overflow: hidden; 
 }
+
 /* SIDE BAR SECTION */
-.sidebar{
-    width: 15rem;
-    box-shadow: $box-shadow;
+.sidebar {
+  width: 15rem;
+  box-shadow: $box-shadow;
+
+  max-height: 88vh; 
+   overflow-y: auto;
+  flex-shrink: 0;           
 }
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2); // customize as you like
+  border-radius: 4px;
+}
+
 menu{
     ul{
         li{
@@ -148,6 +163,13 @@ menu{
     border-left: .3rem solid #39CDCC;
     color: $text-color;
     background-color: $light-blue;
+}
+
+.main-body {
+//   flex: 1;            
+  overflow-y: auto;
+  height: 88vh;
+  padding: 1rem;     
 }
 @media screen and (max-width: 1280px) {
     /* HEADER SECTION */

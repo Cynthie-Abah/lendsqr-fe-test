@@ -208,8 +208,9 @@ useEffect(() => {
                 </div>
             </div>
             </div>
-
-            <Outlet />
+            <div className="main-body">
+             <Outlet />   
+            </div>
             
         </div> 
     </div>  
