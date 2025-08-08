@@ -1,116 +1,100 @@
-LENDSQR FRONTEND DEVELOPMENT ASSESSMENT TEST  
+# LENDSQR FRONTEND DEVELOPMENT ASSESSMENT TEST
 
-This repository contains the completed assessment for the frontend engineering position at Lendsqr. The assessment involved building four pages using React with TypeScript and SCSS, based on a provided design. The assessment aimed to evaluate the candidate's skills in front-end development, code quality, and adherence to design specifications. 
+This repository contains the completed frontend assessment for the **Lendsqr Engineering role**.  
+The task involved building four pages using **React**, **TypeScript**, and **SCSS**, based on a provided UI design.  
+The goal was to evaluate frontend development skills, code quality, and adherence to design specifications.
 
-  
+---
 
- Pages Implemented 
+## Personal Note
 
-  
+This was the **first React project** I built after learning the basics — just `useState` and `useEffect`.  
+I’ve chosen to keep it in my portfolio because it shows **how far I’ve come**. This project reflects my **early learning stage**, and I’m proud of the growth since then.
 
-The assessment required building the following pages: 
+---
 
-  
+## Pages Implemented
 
-1. Login Page: Allows users to log in to the application. This login bar uses the following email and password to login; email: cynthie@gmail.com, password: wfubrfyub2343.  
+### Login Page
 
-2. Dashboard Page: Displays a dashboard with relevant information and data about the 500 records fetched from a mock API. 
+- **Open Login:** You can log in using **any email and password combination**, since the mock API used for authentication is no longer active.
+- This setup is useful for testing or showcasing the application without restrictions.
 
-3. User Page: Shows a list of users fetched from a mock API. I implemented the use of JSON generator to generate the 500 records used to test the web application and mocky.io for the API mocking as suggested in the test assessment instructions. 
+> **Note:** Authentication is currently disabled. Credential validation will be restored once a new API is integrated.
 
-4. User Details Page: Displays detailed information about a selected user and allows storing and retrieving user details using local storage. 
+### Dashboard Page
+- Displays an overview dashboard showing insights from 500 user records fetched from a mock API.
 
-  
+### 👥 User Page
+- Shows a list of users.
+- Uses [Mocky.io](https://mocky.io) and a JSON generator to simulate an API with 500 mock user records.
 
-TECH STACK 
+### User Details Page
+- Displays detailed information about a selected user.
+- Uses **localStorage** to persist and retrieve user data.
 
- The following technologies were used for this assessment: 
+---
 
- React: A JavaScript library for building user interfaces. 
+## Tech Stack
 
- TypeScript: A statically typed superset of JavaScript that enables enhanced code quality and development experience. 
+- **React** – For building the user interface  
+- **TypeScript** – For type safety and improved developer experience  
+- **SCSS** – For writing modular and maintainable styles
 
-SCSS: A CSS preprocessor that offers additional functionalities and organization to stylesheets. 
+---
 
-  
+## Installation
 
-INSTALLATION 
+To run the application locally:
 
- 	To run this application locally, follow these steps: 
+```bash
+# 1. Clone the repository
+git clone <repository-url>
 
- 1. Clone the repository: `git clone <repository-url>` 
+# 2. Navigate into the project directory
+cd lendsqr-fe-test
 
-2. Install dependencies: `npm install` 
+# 3. Install dependencies
+npm install
 
-3. Start the development server: `npm start` 
+# 4. Start the development server
+npm start
 
-  
 
-FOLDER STRUCTURE 
-
- The repository is organized as follows: 
-
-|--- src 
-
-├── assets 
-
-│   ├── image 4.png 
-
-│   ├── lendsqr.png 
-
-│   ├── pablo-sign-in 1.png 
-
-│   ├── react.svg 
-
-│   └── Union.svg 
-
-├── Styles 
-
-│   ├── BaseLayout.scss 
-
-│   ├── Dashboard.scss 
-
-│   ├── Login.scss 
-
-│   └── UserDetails.scss 
-
-├── templates 
-
-│   ├── BaseLayout.tsx 
-
-│   ├── Dashboard.tsx 
-
-│   ├── Login.tsx 
-
-│   ├── MainPage.tsx 
-
-│   ├── NotFound.tsx 
-
-│   └── UserDetails.tsx 
-
-├── App.tsx 
-
-├── main.tsx 
-
-└── vite-env.d.ts 
-
-  
-
-The `src` directory contains the main source code of the application. 
-
-The `assets` directory contains images and used in the creation of the application. 
-
-The `templates` directory contains the typescript react. 
-
-The `app.tsx` is responsible for the routing along pages.  
-
- 
+📁 Folder Structure
+pgsql
+Copy
+Edit
+src/
+├── assets/
+│   ├── image 4.png
+│   ├── lendsqr.png
+│   ├── pablo-sign-in 1.png
+│   ├── react.svg
+│   └── Union.svg
+│
+├── Styles/
+│   ├── BaseLayout.scss
+│   ├── Dashboard.scss
+│   ├── Login.scss
+│   └── UserDetails.scss
+│
+├── templates/
+│   ├── BaseLayout.tsx
+│   ├── Dashboard.tsx
+│   ├── Login.tsx
+│   ├── MainPage.tsx
+│   ├── NotFound.tsx
+│   └── UserDetails.tsx
+│
+├── App.tsx         # Handles routing
+├── main.tsx
+└── vite-env.d.ts
 
   
 
 REPOSITORY STRUCTURE 
 
-  
 
 The repository follows best practices for maintaining a clean and well-documented codebase. The commit history and messages provide clear insights into the development process and the reasoning behind specific changes. This README file provides detailed instructions for setting up the project and running the application. 
 
