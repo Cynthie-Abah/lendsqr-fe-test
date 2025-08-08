@@ -3,7 +3,6 @@ import union from '../assets/Union.svg'
 import lensqr from '../assets/lendsqr.png'
 import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/Login.scss'
-import axios from 'axios';
 
 interface LoginProps{
 }
@@ -37,6 +36,7 @@ const Login: FC<LoginProps> = () => {
             // console.log(clients);
             
             // clients.forEach((element: { email: string; password: string; id: number }) => {
+            console.log(email, password);
             
                 // if (email == element.email && password == element.password) {
                     setIsLoading(false)
