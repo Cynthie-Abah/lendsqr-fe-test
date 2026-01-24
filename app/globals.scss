@@ -1,0 +1,121 @@
+
+/* Colors */
+$primary-500: #0a5cff;
+$primary-600: #0047cc;
+
+$white-100: #545F7D26;
+$white-200: #FBFBFB;
+
+$blue-200: #213F7D;
+$blue-300: #545F7D;
+$blue-500: #5718FF;
+
+$teal-300: #39CDCC;
+
+$pink-500: #FF3366;
+$orange-500: #F55F44;
+$purple-500: #DF18FF;
+$yellow-500: #E9B200;
+$red-500: #E4033B;
+
+$gold-500: #E9B200;
+
+
+$gray-900: #111827;
+$gray-700: #545F7D;
+$gray-400: #9ca3af;
+$gray-100: #f3f4f6;
+
+$success-100: #39CD62;
+$error: #dc2626;
+$warning: #f59e0b;
+
+/* Typography */
+$font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.125rem;
+$text-xl: 1.25rem;
+
+$font-regular: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+
+/* Spacing */
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+
+/* Radius */
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 10px;
+
+/* Shadows */
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+:root {
+  --color-bg: #{$gray-100};
+  --color-text: #{$gray-900};
+  --color-primary: #{$primary-500};
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-sans;
+  font-size: $text-base;
+  font-weight: $font-regular;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+// // MIXINS AND MAP EXAMPLE
+// // 1. Design tokens
+// $colors: (
+//   primary: #4f46e5,
+//   secondary: #6b7280,
+//   success: #16a34a
+// );
+
+// $spaces: (
+//   small: 0.5rem 1rem,
+//   medium: 0.75rem 1.5rem,
+//   large: 1rem 2rem
+// );
+
+// $radius: 0.5rem;
+
+// // 2. Variant mixin
+// @mixin button-variant($color-key, $size-key) {
+//   background-color: map-get($colors, $color-key);
+//   color: #fff;
+//   padding: map-get($spaces, $size-key);
+//   border-radius: $radius;
+//   font-weight: 600;
+//   cursor: pointer;
+//   border: none;
+// }
+
+// // 3. Generate classes dynamically
+// @each $color, $_ in $colors {
+//   @each $size, $_ in $spaces {
+//     .button-#{$color}-#{$size} {
+//       @include button-variant($color, $size);
+//     }
+//   }
+// }
