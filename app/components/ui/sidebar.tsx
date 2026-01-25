@@ -1,20 +1,73 @@
-//REPLACE TAILWIND WITH SCSS
+"use client"
+import '../../styles/components/sidebar.scss'
+import { sidebarNav } from '@/app/lib/constants'
+import { ChevronDown, LogOut } from 'lucide-react'
+import Link from 'next/link'
+import { Icons } from './icons'
+import { usePathname } from 'next/navigation'
+import useLogout from '@/app/hooks/useLogout'
 
-// import { Icons } from '../icons';
-// export const Sidebar = () => {
-//   return (
-//     <div className="bg-white w-66 h-full flex flex-col">
-//       <div className="logo-section h-14 flex items-center border-b-[0.5px] border-[#9696964D]/70">
-//         <Icons.hngConnectLogo />
-//       </div>
+export const Sidebar = () => {
+    const {logout, isPending} = useLogout();
+    const pathname = usePathname()
 
-//       <ul>
-//         <li></li>
-//         <li></li>
-//         <li></li>
-//         <li></li>
-//         <li></li>
-//       </ul>
-//     </div>
-//   );
-// };
+  return (
+    <aside className="sidebar">
+        <div className="sidebar__content">
+            <button 
+            className={'switch-org-btn'}>
+                <Icons.organizationIcon /> 
+                <span>Switch Organization</span> 
+                <ChevronDown width={15} height={15} />
+            </button>
+
+            {sidebarNav.map((item) => {
+            if (item.type === 'section') {
+                return (
+                <div key={item.title}>
+                    <p className="sidebar-section-title">{item.title}</p>
+                    <ul className='sidebar__menu'>
+                    {item.items.map(link => (
+                        <li key={link.path}>
+                        <Link 
+                        key={link.path} 
+                        href={link.path} 
+                        className={`sidebar__item ${pathname === link.path ? 'active' : ''}`}>
+                        <link.icon /> 
+                        <span>{link.label}</span>
+                        </Link>
+                        </li>
+                    ))}
+                    </ul>
+                </div>
+                )
+            }
+
+            if (item.type === 'link') {
+                return <Link 
+                    key={item.path} 
+                    href={item.path} 
+                    className={`sidebar__item ${pathname === item.path ? 'active' : ''}`}>
+                    <item.icon /> 
+                    <span>{item.label}</span>
+                    </Link>
+            }
+
+            
+            })}
+
+            <button 
+                className={'logout-btn'}
+                onClick={() => logout()}
+                disabled={isPending}
+                > 
+                <LogOut /> 
+                <span>{isPending ? 'Logging out' : 'Logout'}</span>
+                </button>
+
+            <span className='sidebar__v'>v1.2.0</span>
+
+        </div>
+    </aside>
+  )
+}

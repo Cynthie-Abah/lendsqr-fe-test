@@ -1,0 +1,119 @@
+@use '../../globals.scss' as *;
+
+$colors: (
+    primary-blue: #545F7D26,
+    primary-error: #e4033b,
+    primary-green: #39cd62,
+    tertiary-50: #e5e7eb,
+    text-secondary: #545F7D,
+    white: #ffffff,
+);
+
+$radius-lg: 5px;
+
+$heights: (
+    xs: 40px,
+    sm: 40px,
+    md: 50px,
+);
+
+@mixin focus-ring($color) {
+    &:focus-within {
+        border-color: map-get($colors, $color);
+    }
+}
+
+@mixin input-variant($variant) {
+    @if $variant ==outline {
+        border: 2px solid map-get($colors, tertiary-50);
+        border-radius: $radius-lg;
+        background: map-get($colors, white);
+        position: relative;
+
+        @include focus-ring(primary-blue);
+
+        &[data-invalid='true'] {
+            border-color: map-get($colors, primary-error);
+        }
+
+        &[data-valid='true'] {
+            border-color: map-get($colors, primary-green);
+        }
+    }
+
+    @if $variant ==ghost {
+        border: none;
+        background: transparent;
+        padding-right: 0.75rem;
+    }
+}
+
+@mixin input-height($size) {
+    height: map-get($heights, $size);
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    color: map-get($colors, text-secondary);
+    font-size: 0.875rem;
+
+    &__control {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        font: inherit;
+        background: transparent;
+        padding: 0 0.75rem;
+    }
+
+    &__icon {
+        position: absolute;
+        left: 0.75rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__toggle {
+        position: absolute;
+        right: 0.75rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $teal-300;
+    }
+
+    /* variants */
+    &--outline {
+        @include input-variant(outline);
+    }
+
+    &--ghost {
+        @include input-variant(ghost);
+    }
+
+    /* sizes */
+    &--xs {
+        @include input-height(xs);
+    }
+
+    &--sm {
+        @include input-height(sm);
+    }
+
+    &--md {
+        @include input-height(md);
+    }
+
+    &[data-disabled='true'] {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}

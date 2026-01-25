@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.scss';
+import { Toaster } from 'react-hot-toast';
+import Providers from './components/providers';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,7 +15,50 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-inter antialiased`}>{children}</body>
+      <body className={`font-inter antialiased`}>
+      <Providers>
+      <Toaster
+          position="top-right"
+          toastOptions={{
+            // default options
+            duration: 3000,
+            style: {
+              background: '#363636',
+              color: '#fff',
+              fontSize: '0.875rem',
+              padding: '12px 16px',
+              borderBottom: '4px solid #fff',
+              fontWeight: 'bold',
+              paddingRight: "1rem"
+            },
+
+            // success style
+            success: {
+              style: {
+                background: '#D6EBCE',
+                color: '#34A400',
+                borderBottom: '4px solid #34A400',
+                fontWeight: 'bold',
+                paddingRight: "1rem"
+              },
+            },
+
+            // error style
+            error: {
+              style: {
+                background: '#ffa9a4',
+                color: '#fff',
+                borderBottom:'4px solid #FD0000BF',
+                fontWeight: 'bold', 
+                paddingRight: "1rem"
+              },
+            },
+          }}
+        />
+
+        {children}
+        </Providers>
+        </body>
     </html>
   );
 }

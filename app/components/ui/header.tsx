@@ -1,51 +1,46 @@
-// REPLACE TAILWIND WITH SCSS
+import Link from 'next/link'
+import Input from './input'
+import '../../styles/components/header.scss'
+import { Icons } from './icons'
+import { Button } from './button'
+import { Bell, Search } from 'lucide-react'
 
-// 'use client';
-// import Link from 'next/link';
-// import Input from './input';
-// import clsx from 'clsx';
-// import { usePathname } from 'next/navigation';
+export const Header = () => {
 
-// export const Header = () => {
-//   const pathname = usePathname();
-//   const navLinks = [
-//     { label: 'Overview', href: '/' },
-//     { label: 'Customers', href: '/customers' },
-//     { label: 'Jobs', href: '/jobs' },
-//   ];
+  return (
+    <header className="header">
+        <div className="header__logo">
+        <Icons.lendsqrLogo />
+      </div>
 
-//   return (
-//     <div className=" bg-white p-3 h-17.5 shadow-xs border-b border-light-muted-02 flex items-center justify-between">
-//       <nav>
-//         <ul className="flex gap-4 mx-6 text-sm">
-//           {navLinks.map(({ label, href }) => (
-//             <li key={href}>
-//               <Link
-//                 href={href}
-//                 className={clsx(
-//                   'text-muted-foreground transition font-medium hover:text-black',
-//                   pathname === href && 'text-black',
-//                 )}
-//               >
-//                 {label}
-//               </Link>
-//             </li>
-//           ))}
-//         </ul>
-//       </nav>
+      <nav className="header__search_bar">
+        <Input className='input' placeholder="Search for anything" />
+        <Button className='button' size='icon'><Search width={15} height={15} /></Button>
+      </nav>
 
-//       <div className="flex items-center gap-4 h-9">
-//         {/* search bar */}
-//         <div className="search">
-//           <Input className="h-9 w-70 text-sm" placeholder="Search" />
-//         </div>
+      <div className="header__actions">
+        <ul>
+            <li>
+                <Link className='docs' href={'/docs'}>Docs</Link>
+            </li>
 
-//         {/* profile */}
-//         <div className="profile border border-light-muted-02 rounded-md h-full px-4 text-sm flex items-center gap-2">
-//           <div className="logo w-4 h-4 rounded-full bg-light-muted-02 flex items-center justify-center text-2xs font-semibold text-gray-600"></div>
-//           <span className="text-black-300 text-sm">Username</span>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+            <li>
+                <Link href={'/notifications'}>
+                <Bell width={20} height={20} />
+                </Link>
+            </li>
+
+            <li>
+                <div className="header__profile">
+          <div className="header__avatar" />
+          <span className="header__username">Username</span>
+          <Icons.caretDown />
+        </div>
+            </li>
+
+        </ul>
+      </div>
+
+    </header>
+  )
+}

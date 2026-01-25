@@ -1,0 +1,110 @@
+@use '../../globals.scss' as *;
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    min-height: 100vh;
+    background: #FFFFFF;
+}
+.img{
+    width: 100%;
+}
+.form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 15px 90px 0px #00000008;
+}
+.logo{
+    padding: 106px;
+}
+.logo-container{
+    position: relative;
+    width: 173.76473999023438px;
+    height: 36px;
+}
+.illustration{
+    padding: 67px;
+}
+.pablo-img{
+    position: relative;
+    width: 100%;
+    min-height: 338px
+}
+.form-container{
+    min-width: 447px;
+}
+.form-container h2 {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: .5px;
+        letter-spacing: -0.04em;
+        color: $blue-200;
+        padding: 0;
+}
+.form-container > p {
+        font-weight: 400;
+        font-size: 20px;
+        color: $blue-300;
+}
+.form-container .input {
+        margin-top: 25px;
+}
+.input-container {
+    padding-top: 1rem;
+}
+.forgot-password-btn {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: right;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        display: block;
+        outline: none;
+        background: transparent;
+        border: none;
+        padding: 2rem 0;
+        color: $teal-300;
+        cursor: pointer;
+}
+.error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2px;
+}
+
+
+// 1024px 
+@media (max-width: 1024px) {
+    // styles here
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .illustration {
+        display: none;
+    }
+    .logo {
+        padding-top: 0;
+    }
+}
+// sm: 640px,
+@media (max-width: 640px) {
+    .logo {
+            padding: 1.5rem;
+        }
+    .form-container {
+        min-width: 100%;
+        padding: 1.5rem;
+    }
+        .illustration {
+            padding-top:0;
+        }
+}

@@ -1,4 +1,13 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+@font-face {
+  font-family: 'Avenir Next';
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url('/fonts/avenir-next') format('truetype');
+}
+
 /* Colors */
 $primary-500: #0a5cff;
 $primary-600: #0047cc;
@@ -31,7 +40,8 @@ $error: #dc2626;
 $warning: #f59e0b;
 
 /* Typography */
-$font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-work-sans: 'Work Sans', sans-serif;
+$font-roboto: 'Roboto', sans-serif;
 
 $text-xs: 0.75rem;
 $text-sm: 0.875rem;
@@ -73,7 +83,7 @@ $shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08);
 
 body {
   margin: 0;
-  font-family: $font-sans;
+  font-family: 'Avenir Next';
   font-size: $text-base;
   font-weight: $font-regular;
   line-height: 1.5;
@@ -81,41 +91,3 @@ body {
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
 }
-
-
-
-// // MIXINS AND MAP EXAMPLE
-// // 1. Design tokens
-// $colors: (
-//   primary: #4f46e5,
-//   secondary: #6b7280,
-//   success: #16a34a
-// );
-
-// $spaces: (
-//   small: 0.5rem 1rem,
-//   medium: 0.75rem 1.5rem,
-//   large: 1rem 2rem
-// );
-
-// $radius: 0.5rem;
-
-// // 2. Variant mixin
-// @mixin button-variant($color-key, $size-key) {
-//   background-color: map-get($colors, $color-key);
-//   color: #fff;
-//   padding: map-get($spaces, $size-key);
-//   border-radius: $radius;
-//   font-weight: 600;
-//   cursor: pointer;
-//   border: none;
-// }
-
-// // 3. Generate classes dynamically
-// @each $color, $_ in $colors {
-//   @each $size, $_ in $spaces {
-//     .button-#{$color}-#{$size} {
-//       @include button-variant($color, $size);
-//     }
-//   }
-// }
