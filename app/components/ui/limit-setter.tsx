@@ -1,59 +1,77 @@
-// REPLACE TAILWIND WITH SCSS
+import Form from 'next/form';
+import  { useCallback, useEffect } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import '../../styles/components/limit-setter.scss'
+import { Table } from '@tanstack/react-table';
 
-// import Form from 'next/form';
-// import React, { useCallback } from 'react';
-// import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+// calculate this and set based on the total number of tables later
 
-// const limits = [
-//   { id: '10', name: '10', value: '10' },
-//   { id: '20', name: '20', value: '20' },
-//   { id: '50', name: '50', value: '50' },
-//   { id: '100', name: '100', value: '100' },
-// ];
+const limits = [
+  { id: '10', name: '10', value: '10' },
+  { id: '25', name: '25', value: '25' },
+  { id: '50', name: '50', value: '50' },
+  { id: '100', name: '100', value: '100' },
+  { id: '250', name: '250', value: '250' },
+];
 
-// export default function LimitSetter({ limit }: Readonly<{ limit?: number }>) {
-//   const searchParams = useSearchParams();
-//   const router = useRouter();
-//   const pathname = usePathname();
+export default function LimitSetter<tData>({ table }: {table: Table<tData>}) {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
 
-//   const entries = Array.from(searchParams.entries());
-//   const defaultLimit = entries
-//     .map(([key, value]) => ({
-//       filterKey: key,
-//       filterValue: value,
-//     }))
-//     .find((filter) => filter.filterKey === 'limit');
+  const totalRows = table.getPrePaginationRowModel().rows.length
 
-//   const createQueryString = useCallback(
-//     (value: string | number) => {
-//       const params = new URLSearchParams(searchParams.toString());
-//       console.log(params);
+  // fetches the default limit 
+  const entries = Array.from(searchParams.entries());
+  const defaultLimit = entries
+    .map(([key, value]) => ({
+      filterKey: key,
+      filterValue: value,
+    }))
+    .find((filter) => filter.filterKey === 'limit');
 
-//       params.set('limit', `${value}`);
-//       console.log(params);
-//       router.push(pathname + '?' + params.toString());
-//     },
-//     [searchParams, pathname, router],
-//   );
+    // sets the default value to the actual limit value on initial page load 
+    useEffect(() => {
+      if (defaultLimit !== undefined) {
+        table.setPageSize(Number(defaultLimit.filterValue))
+      }
+    }, []);
 
-//   return (
-//     <Form action="" className="flex items-center gap-2 text-sm md:text-base">
-//       <label htmlFor="limit">Showing</label>
+// create query string and append to url 
+  const createQueryString = useCallback(
+    (value: string | number) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set('limit', `${value}`);
+      router.push(pathname + '?' + params.toString());
+    },
+    [searchParams, pathname, router],
+  );
 
-//       <select
-//         id="limit"
-//         defaultValue={defaultLimit?.filterValue ?? limit}
-//         onChange={(e) => createQueryString(e.target.value)}
-//         className="border rounded px-2 py-1"
-//       >
-//         {limits.map((limit) => (
-//           <option key={limit.id} value={limit.value}>
-//             {limit.name}
-//           </option>
-//         ))}
-//       </select>
+  const handleLimitChange = (e: React.ChangeEvent<HTMLSelectElement>)=> {
+    table.setPageSize(Number(e.target.value))
+    createQueryString(e.target.value)
+  }
 
-//       <span>rows per page</span>
-//     </Form>
-//   );
-// }
+  return (
+    <Form action="" className="limit-setter">
+      <label htmlFor="limit" className="limit-setter__label">
+        Showing
+      </label>
+
+      <select
+        id="limit"
+        defaultValue={defaultLimit?.filterValue}
+        onChange={(e) => handleLimitChange(e)}
+        className="limit-setter__select"
+      >
+        {limits.map((limit) => (
+          <option key={limit.id} value={limit.value}>
+            {limit.name}
+          </option>
+        ))}
+      </select>
+
+      <span className="limit-setter__suffix"> out of {totalRows}</span>
+    </Form>
+  );
+}

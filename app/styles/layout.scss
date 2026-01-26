@@ -1,18 +1,18 @@
 .app-layout {
-    height: 100vh; // full viewport
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 .app-body {
-    flex: 1; // take remaining height after header
+    flex: 1; 
     display: flex;
-    overflow: hidden; // prevents page scroll
+    overflow: hidden; 
 }
 
 .app-content {
     flex: 1;
-    overflow-y: auto; // 🔥 independent scroll
+    overflow-y: auto; 
     padding: 1.5rem;
-    background: #f7f8fa;
+    background: #FBFBFB;
 }

@@ -4,8 +4,14 @@ import '../../styles/components/header.scss'
 import { Icons } from './icons'
 import { Button } from './button'
 import { Bell, Search } from 'lucide-react'
+import { cookies } from 'next/headers'
+import Image from 'next/image'
 
-export const Header = () => {
+export const Header = async () => {
+  const cookieStore = await cookies();
+  const userCookie = cookieStore.get('user');
+  const userData = JSON.parse(userCookie?.value || ''); 
+  
 
   return (
     <header className="header">
@@ -32,9 +38,21 @@ export const Header = () => {
 
             <li>
                 <div className="header__profile">
-          <div className="header__avatar" />
-          <span className="header__username">Username</span>
-          <Icons.caretDown />
+          <div className="header__avatar">
+            {
+              userData.profilePic ? 
+              <Image 
+            fill
+            src={userData.profilePic} 
+            alt={userData.username} /> : 
+            // <PlaceholderProfile /> 
+            ''
+            }
+           
+          </div>
+
+          <span className="header__username">{userData?.username}</span>
+          <button><Icons.caretDown /></button>
         </div>
             </li>
 

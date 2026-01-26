@@ -21,7 +21,6 @@ export default function useLogout() {
       if (!navigator.onLine) {
         toast.error("Please check your internet connection and try again.");
       } else if (error instanceof Error) {
-        console.error(error);
         toast.error("Error logging out. Please check credentials and try again.");
       }
     },

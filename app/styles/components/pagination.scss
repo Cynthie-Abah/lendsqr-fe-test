@@ -1,0 +1,78 @@
+@use '../../globals.scss' as *;
+
+.data-table-pagination {
+    margin-top: .7rem;
+    padding: 0.5rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    font-family: 'Work Sans';
+}
+
+.data-table-pagination__nav {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+/* Buttons */
+.pagination-btn {
+    padding: 0;
+    width: 0;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($blue-200, 0.1);
+    color: $blue-200;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: none;
+
+    &:disabled {
+        filter: opacity(0.6);
+    }
+
+    &:hover {
+        background: rgba($blue-200, 0.2);
+    }
+
+}
+
+/* Page numbers */
+.pagination-pages {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Work Sans';
+    font-size: 16px;
+}
+
+.pagination-page {
+    color: rgba($blue-300, 0.6);
+    border-radius: 2px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    transition: background-color 150ms ease, color 150ms ease;
+    font-size: 16px;
+    &:hover {
+        background-color: var(--accent-75, #f1f5f9);
+    }
+
+    &.is-active {
+        border: none;
+        color: $blue-300;
+        font-weight: 500;
+    }
+}
+
+.pagination-ellipsis {
+    padding-inline: 0.5rem;
+    color: #6b7280;
+}

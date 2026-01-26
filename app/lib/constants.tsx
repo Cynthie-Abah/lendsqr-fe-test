@@ -79,3 +79,30 @@ export const sidebarNav = [
     ],
   },
 ] as const;
+
+export const userStats = [
+  {
+    icon: <Icons.users2 />,
+    name: 'Users',
+    value: 2453,
+    color: '#DF18FF',
+  },
+  {
+    icon: <Icons.activeUsers />,
+    name: 'Active Users',
+    value: 2453,
+    color: '#5718FF',
+  },
+  {
+    icon: <Icons.loanUsers />,
+    name: 'Users with Loans',
+    value: 12453,
+    color: '#F55F44',
+  },
+  {
+    icon: <Icons.savingUserIcon />,
+    name: 'Users with Savings',
+    value: 102453,
+    color: '#FF3366',
+  },
+];

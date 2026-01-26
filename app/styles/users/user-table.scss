@@ -1,0 +1,12 @@
+@use '../../globals.scss' as *;
+
+.data-table {
+    width: 100%;
+
+    .data-table__empty {
+        height: 6rem;
+        text-align: center;
+        color: $blue-200;
+        font-size: 0.875rem;
+    }
+}

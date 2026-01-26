@@ -1,0 +1,74 @@
+@use '../../globals.scss' as *;
+
+.user-box {
+    width: 100%;
+    min-width: 220px;
+    min-height: 150px; 
+    padding: 1.5rem 2rem; 
+    border: 1px solid rgba($blue-200,  6%);
+    background: #FFFFFF;
+    box-shadow: 3px 5px 20px 0px #0000000A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 4px;
+    gap: .7rem;
+    font-family: 'Work Sans';
+    h3 {
+        padding: 0;
+        margin: 0;
+        font-family: 'Work Sans';
+        font-weight: 500;
+        font-size: 14px;
+        color: $blue-300;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        padding: 0;
+        margin: 0;
+        font-family: 'Work Sans';
+        color: $blue-200;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    &__icon {
+        width: 40px;
+        height: 40px;
+        background: rgba($purple-500, 10%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+}
+.dashboard-box__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+        font-weight: 500;
+        font-size: 16px;
+        color: #4b5563;
+    }
+
+    svg {
+        width: 0.8125rem; 
+        height: 0.8125rem;
+        color: var(--muted-foreground);
+    }
+}
+.dashboard-box__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 1rem;
+}

@@ -19,17 +19,14 @@ export const login = async (user: User) => {
       throw new Error(response.message ?? "Login failed");
     }
      if (response[0].email === user.email && response[0].password === user.password) {
-        (await cookies()).set('user', response, {
+        (await cookies()).set('user', JSON.stringify(response[0]), {
       httpOnly: true,
       secure: true,
       sameSite: 'strict',
       path: '/',
     });
-    console.log(response, 'it was successful');
     return response[0];
-      } else {
-        console.log('there was an error');
-        
+      } else { 
         throw new Error("Incorrect credentials. Please try again.");
       }
        
@@ -38,7 +35,6 @@ export const login = async (user: User) => {
     
 
     } catch (error) {
-        console.error(error)
         throw error;
     }
 }
@@ -47,7 +43,4 @@ export const logout = async () => {
   const cookieStore = await cookies()
 
   cookieStore.delete('user')
-
-  // Redirect to login page
-  // redirect('/auth/login')
 }

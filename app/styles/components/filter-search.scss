@@ -1,0 +1,98 @@
+@use '../../globals.scss' as *;
+.filter-popover{
+    position: relative;
+    font-family: 'Work Sans';
+    button{
+        background: transparent;
+        padding: 0;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+    &__first-panel{
+        box-shadow: 3px 5px 20px 0px #0000000A;
+        background: transparent;
+    }
+    &__panel{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 1.2rem;
+        border: 1px solid rgba(84, 95, 125, 0.14);
+        border-radius: 4px;
+        margin-top: .5rem;
+        width: 270px;
+        max-height: 600px;
+    }
+    &__input {
+        border: 1px solid rgba($blue-200, 0.2);
+        border-radius: 8px;
+        font-family: 'Work Sans';
+        font-size: 14px;
+            &::placeholder{
+                font-weight: 400;
+                color: rgba($blue-300, 0.7);
+            }
+            
+    }
+    &__label{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: $blue-300;
+        text-transform: capitalize;
+    }
+    
+        &__buttons {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 1.5rem;
+            gap: 1rem;
+
+            button{
+                height: 40px;
+                width: 100%;
+                font-family: $font-work-sans;
+                font-weight: 600;
+                font-size: 14px;
+                text-align: center;
+                vertical-align: middle;
+                border-radius: 8px;
+                text-transform: capitalize;
+                cursor: pointer;
+            }
+        }
+        &__filter-button{
+            color: #fff;
+            background: #39CDCC;
+            border: 1px solid #39CDCC;
+            &:active {
+                    transform: scale(0.98);
+                }
+            
+            &:hover {
+            filter: opacity(0.8);
+            }
+            &:disabled {
+                pointer-events: none;
+            }
+            }
+        &__reset-button{
+            border: 1px solid $blue-300;
+            color: $blue-300;
+            background: #fff;
+            &:active {
+                    transform: scale(0.98);
+                }
+            
+                &:hover {
+                    background: $blue-300;
+                    color: #fff;
+                }
+            
+                &:disabled {
+                    pointer-events: none;
+                }
+            }
+}

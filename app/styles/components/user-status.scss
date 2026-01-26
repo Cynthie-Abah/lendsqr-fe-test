@@ -1,0 +1,26 @@
+@use '../../globals.scss' as *;
+.Pending {
+    background: rgba($yellow-500, 0.06);
+    color: $yellow-500;
+}
+.Inactive {
+    background: rgba($blue-300, 0.06);
+    color: $blue-300;
+}
+.Active {
+    background: rgba($success-100, 0.06);
+    color: $success-100;
+}
+.Blacklisted {
+    background: rgba($red-500, 0.06);
+    color: $red-500;
+}
+.user-status {
+    height: 30;
+    width: fit-content;
+    padding: 0 1rem;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

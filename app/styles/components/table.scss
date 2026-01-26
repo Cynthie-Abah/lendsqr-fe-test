@@ -1,0 +1,57 @@
+@use '../../globals.scss' as *;
+
+.table-container {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 4px;
+    overflow-x: auto;
+    border: 1px solid #213F7D0F;
+    box-shadow: 3px 5px 20px 0px #0000000A;
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    caption-side: bottom;
+}
+
+.table-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.table-body {
+    .table-row {
+        font-family: 'Work Sans';
+            font-weight: 400;
+            font-size: 14px;
+            color: #545F7D;
+            border-bottom: 1px solid #e5e7eb;
+            &:last-child {
+                    border-bottom: none;
+                }
+    }
+    .table-cell{
+        padding: 1rem 0;
+        text-transform: capitalize;
+    }
+}
+
+.table-head {
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: $blue-300;
+    font-family: Work Sans;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.table-cell {
+    white-space: nowrap;
+}

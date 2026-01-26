@@ -1,0 +1,83 @@
+@use '../../globals.scss' as *;
+
+.menu {
+    margin-top: 0.5rem;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba($blue-300, 0.04);
+    box-shadow: 3px 5px 20px 0px #0000000A;
+    padding: .8rem 0;
+
+    a{
+        text-decoration: none;
+        color: $blue-300;
+        font-family: Work Sans;
+        font-weight: 500;
+        font-size: 14px;
+        display: inline-flex;
+        padding: .6rem 1.2rem;
+        align-items: center;
+        justify-content: start;
+        gap: .5rem;
+        border-left: 3px solid white;
+        transition: border 0.2s ease, color 0.2s ease;
+        svg {
+                width: 14px;
+                height: 14px;
+            }
+        &:hover {
+            background-color: rgba($teal-300, 6%);
+            color: $blue-200;
+            border-left: 3px solid $teal-300;
+            svg {
+                filter: opacity(1);
+            }
+        }
+        
+    }
+
+    button{
+        text-decoration: none;
+        color: $blue-300;
+        font-family: Work Sans;
+        font-weight: 500;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: start;
+        gap: .5rem;
+        padding: .6rem 1.2rem;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        border-left: 3px solid white;
+        transition: border 0.2s ease, color 0.2s ease;
+
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        &:hover {
+            background-color: rgba($teal-300, 6%);
+            color: $blue-200;
+            border-left: 3px solid $teal-300;
+
+            svg {
+                filter: opacity(1);
+            }
+        }
+        }
+}
+
+.menu-button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: $blue-300;
+}

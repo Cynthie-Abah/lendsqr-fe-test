@@ -35,13 +35,25 @@
         gap: 0.5rem;
         padding: 0 1rem;
         font-size: 16px;
+
+        button {
+                padding: 0;
+                background: transparent;
+                outline: none;
+                border: none;
+                cursor: pointer;
+            }
     }
 
     &__avatar {
+        position: relative;
         width: 48px;
         height: 48px;
         border-radius: 50%;
         background-color: #e5e7eb;
+        img{
+            border-radius: 50%;
+        }
     }
 
     &__username {
@@ -73,11 +85,21 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .header {
+
+        &__search_bar {
+            width: 250px;
+        }
+    }
+}
+
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
         height: auto;
         gap: 0.75rem;
+        padding: 1rem;
 
         &__search_bar {
             width: 100%;
