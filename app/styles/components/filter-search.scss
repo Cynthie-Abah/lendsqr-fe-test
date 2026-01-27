@@ -28,12 +28,26 @@
         border: 1px solid rgba($blue-200, 0.2);
         border-radius: 8px;
         font-family: 'Work Sans';
+        height: 40px;
         font-size: 14px;
             &::placeholder{
                 font-weight: 400;
                 color: rgba($blue-300, 0.7);
             }
             
+    }
+    &__select {
+        border: 1px solid rgba($blue-200, 0.2);
+        border-radius: 8px;
+        font-family: 'Work Sans';
+        font-size: 14px;
+        display: block;
+        height: 40px;
+        padding: 0 .5rem;
+        width: 100%;
+        text-transform: capitalize;
+        outline: none;
+
     }
     &__label{
         font-weight: 500;

@@ -5,6 +5,7 @@ import { UserBox } from "./user-box";
 import { Icons } from "../ui/icons";
 import '../../styles/users/user.scss'
 import { UserDetails } from "@/app/types/types";
+import Loading from "@/app/loading";
 
 export const UsersOverview = () => {
       const {data, isPending} = useUsers()
@@ -34,7 +35,7 @@ export const UsersOverview = () => {
     color: '#FF3366',
   },
 ];
-  if(isPending) return
+  if(isPending) return <Loading />
   return (
       <div className="overview">
 

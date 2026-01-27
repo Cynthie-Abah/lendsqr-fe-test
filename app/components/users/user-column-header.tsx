@@ -2,7 +2,10 @@
 import '../../styles/users/column-header.scss'
 import { FilterSearch, filterType } from "../ui/filter-search"
 
-export const UserColumnHeader = ({columnDetails }: {columnDetails: {id: string, name: string, filterType: filterType}}) => {
+export const UserColumnHeader = ({columnDetails }: {columnDetails: {id: string, name: string, filterType: filterType, selectOptions?: {
+      id: string, 
+      name: string, 
+      value: string}[]}}) => {
   return (
     <p className="data-heading">
         <span>{columnDetails.name}</span> 

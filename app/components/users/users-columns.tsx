@@ -3,6 +3,7 @@ import { UserColumnHeader } from "./user-column-header";
 import { format } from "date-fns";
 import { UserStatus } from "../ui/user-status";
 import { UserMenu } from "./user-menu";
+import { organizationOptions, statusOptions } from "@/app/lib/constants";
 
 export type User = {
     _id: string,
@@ -20,7 +21,8 @@ export type User = {
     header: ()=> (<UserColumnHeader columnDetails={{
       id: "organization",
       name: "organization",
-      filterType: 'select'
+      filterType: 'select',
+      selectOptions: organizationOptions
     }}  />),
   },
   {
@@ -61,14 +63,15 @@ export type User = {
     header: ()=> (<UserColumnHeader columnDetails={{
       id: "status",
       name: "status",
-      filterType: "select"
+      filterType: "select",
+      selectOptions: statusOptions
     }}  />),
     cell: ({row})=> (<UserStatus value={row.original.status} />)
   },
   {
     accessorKey: "action",
     header: " ",
-     cell: ({row})=> {
+    cell: ({row})=> {
         return (<UserMenu rowDetails={row.original} />)
     }
   },

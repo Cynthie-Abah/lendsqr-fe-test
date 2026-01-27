@@ -79,4 +79,38 @@ export const sidebarNav = [
   },
 ] as const;
 
+export const organizationOptions = [
+        {
+          id: 'lendsqr',
+          name: 'lendsqr',
+          value: 'lendsqr'
+        },
+        {
+          id: 'irorun',
+          name: 'irorun',
+          value: 'irorun'
+        },
+        {
+          id: 'lendstar',
+          name: 'lendstar',
+          value: 'lendstar'
+        },
+      ]
 
+export const statusOptions = [
+        {
+          id: 'Blacklisted',
+          name: 'Blacklisted',
+          value: 'Blacklisted'
+        },
+        {
+          id: 'Active',
+          name: 'Active',
+          value: 'Active'
+        },
+        {
+          id: 'Inactive',
+          name: 'Inactive',
+          value: 'Inactive'
+        },
+      ]
