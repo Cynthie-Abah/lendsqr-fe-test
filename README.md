@@ -67,6 +67,14 @@ The app should now be available at `http://localhost:3000`.
 
 ---
 
+```
+login details for testing the app
+
+Email: example@gmail.com
+Password: 12345678
+
+```
+
 ## Project Structure
 
 <!-- app router next js structure  -->

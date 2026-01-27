@@ -9,6 +9,9 @@
     scrollbar-width: none;
     font-family: 'Work Sans';
 
+    &__x-btn {
+            display: none;
+        }
     &__content {
         display: flex;
         flex-direction: column;
@@ -136,15 +139,37 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 830px) {
     .sidebar {
         position: fixed;
+        z-index: 1000;
+        width: 283px;
+        height: 100%;
+        padding-top: 2rem;
+        background-color: #ffffff;
+        overflow: auto;
+        scrollbar-width: none;
+        font-family: 'Work Sans';
+        box-shadow: 3px 0px 20px 0px #0000000f;
         left: -100%;
         top: 0;
         transition: left 0.3s ease;
 
         &.open {
-            left: 0;
+                left: 0;
+            }
+
+        &__x-btn {
+            display: block;
+            text-align: right;
+            padding: 1rem;
+
+            button {
+                border: none;
+                background: transparent;
+                outline: none;
+                color: $blue-200;
+            }
         }
     }
 }

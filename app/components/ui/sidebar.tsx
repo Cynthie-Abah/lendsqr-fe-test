@@ -1,20 +1,33 @@
 "use client"
 import '../../styles/components/sidebar.scss'
 import { sidebarNav } from '@/app/lib/constants'
-import { ChevronDown, LogOut } from 'lucide-react'
+import { ChevronDown, X } from 'lucide-react'
 import Link from 'next/link'
 import { Icons } from './icons'
 import { usePathname } from 'next/navigation'
 import useLogout from '@/app/hooks/useLogout'
+import {motion} from 'motion/react'
 
 export const Sidebar = () => {
     const {logout, isPending} = useLogout();
     const pathname = usePathname()
 
+    const closeSidebar = () => {
+  document.querySelector('.sidebar')?.classList.remove('open')
+}
+
   return (
-    <aside className="sidebar">
+    <motion.aside 
+    className={'sidebar'}> 
+        <div className="sidebar__x-btn">
+            <button onClick={closeSidebar}>
+            <X />
+        </button>
+        </div>
+        
         <div className="sidebar__content">
             <button 
+            onClick={closeSidebar}
             className={'switch-org-btn'}>
                 <Icons.organizationIcon /> 
                 <span>Switch Organization</span> 
@@ -30,6 +43,7 @@ export const Sidebar = () => {
                     {item.items.map(link => (
                         <li key={link.path}>
                         <Link 
+                        onClick={closeSidebar}
                         key={link.path} 
                         href={link.path} 
                         className={`sidebar__item ${pathname === link.path ? 'active' : ''}`}>
@@ -45,6 +59,7 @@ export const Sidebar = () => {
 
             if (item.type === 'link') {
                 return <Link 
+                    onClick={closeSidebar}
                     key={item.path} 
                     href={item.path} 
                     className={`sidebar__item ${pathname === item.path ? 'active' : ''}`}>
@@ -68,6 +83,6 @@ export const Sidebar = () => {
             <span className='sidebar__v'>v1.2.0</span>
 
         </div>
-    </aside>
+    </motion.aside>
   )
 }

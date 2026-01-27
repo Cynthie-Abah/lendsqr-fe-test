@@ -4,8 +4,6 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import '../../styles/components/limit-setter.scss'
 import { Table } from '@tanstack/react-table';
 
-// calculate this and set based on the total number of tables later
-
 const limits = [
   { id: '10', name: '10', value: '10' },
   { id: '25', name: '25', value: '25' },

@@ -1,30 +1,65 @@
+"use client"
 import Link from 'next/link'
 import Input from './input'
 import '../../styles/components/header.scss'
 import { Icons } from './icons'
 import { Button } from './button'
-import { Bell, Search } from 'lucide-react'
-import { cookies } from 'next/headers'
+import { Bell, EllipsisVertical, Menu, Search, SearchIcon, X } from 'lucide-react'
 import Image from 'next/image'
+import { useState } from 'react'
 
-export const Header = async () => {
-  const cookieStore = await cookies();
-  const userCookie = cookieStore.get('user');
-  const userData = JSON.parse(userCookie?.value || ''); 
+export const Header = ({
+  userData, 
+}: {
+    userData: {
+      profilePic: string, 
+      username: string}, 
+    }) => {
+  const [openSearch, setOpenSearch] = useState(false)
+  const [openActions, setOpenActions] = useState(false)
+   const openSidebar = () => {
+  document.querySelector('.sidebar')?.classList.add('open')
+}
   
-
   return (
+    <>
     <header className="header">
-        <div className="header__logo">
-        <Icons.lendsqrLogo />
+
+      {/* mobile btn */}
+      <div className="header__mobile-nav">
+
+        <button onClick={openSidebar} className='menu-button'>
+          <Menu />
+        </button>
+
+        <Button 
+        className='search' 
+        size='icon'
+        variant='default'
+        onClick={()=> setOpenSearch(!openSearch)}>
+         {openSearch ? <X width={20} height={20} /> : <SearchIcon width={20} height={20}  />}
+        </Button> 
+
       </div>
 
-      <nav className="header__search_bar">
+      <div className="header__logo">
+        <Link href={'/'}>
+        <Icons.lendsqrLogo />
+        </Link>
+        
+      </div>
+
+        <button onClick={()=> setOpenActions(!openActions)} className='header__ellipse'>
+          
+        {openActions ? <X /> : <EllipsisVertical /> }
+        </button> 
+
+      <div className={`${openSearch && 'header__mobile-search_bar'} header__search_bar`}>
         <Input className='input' placeholder="Search for anything" />
         <Button className='button' size='icon'><Search width={15} height={15} /></Button>
-      </nav>
+      </div>
 
-      <div className="header__actions">
+      <div className={`${openActions && 'header__mobile-actions'} header__actions`}>
         <ul>
             <li>
                 <Link className='docs' href={'/docs'}>Docs</Link>
@@ -39,16 +74,13 @@ export const Header = async () => {
             <li>
                 <div className="header__profile">
           <div className="header__avatar">
-            {
-              userData.profilePic ? 
+            {/* {
+              userData.profilePic ?  */}
               <Image 
             fill
-            src={userData.profilePic} 
-            alt={userData.username} /> : 
-            // <PlaceholderProfile /> 
-            ''
-            }
-           
+            src={userData.profilePic ? userData.profilePic : '/images/user-placeholder.jpg' } 
+            alt={userData.username} /> 
+          
           </div>
 
           <span className="header__username">{userData?.username}</span>
@@ -60,5 +92,7 @@ export const Header = async () => {
       </div>
 
     </header>
+    </>
+    
   )
 }
