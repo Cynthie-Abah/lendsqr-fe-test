@@ -48,14 +48,14 @@ import '../../styles/components/destruct-modal.scss'
       <div className={'buttonGroup'}>
         <div className="buttons">
           <Button
-            className=""
+            variant='outline'
             disabled={isPending}
             onClick={() => setOpen(false)}
           >
             No, Cancel
           </Button>
           <Button
-            variant="destructive"
+            variant={action.includes('Blacklist') ? "destructive" : "default"}
             disabled={isPending}
             onClick={handleDestruct}
           >

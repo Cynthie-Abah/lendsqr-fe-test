@@ -1,38 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# lendsqr-fe-test
 
-## Getting Started
+## This project is a frontend assessment for **Lendsqr**. The assessment is designed to evaluate intermediate and senior frontend engineers on **React, TypeScript, and SCSS**.
 
-First, run the development server:
+## Table of Contents
+
+- [Assessment Requirements](#assessment-requirements)
+- [Tech Stack](#tech-stack)
+- [Setup & Installation](#setup--installation)
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Mock JSON](#mock-JSON)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Submission](#submission)
+- [Author Notes](#author-notes)
+
+---
+
+## Assessment Requirements
+
+Build the following pages based on the [Figma Design](https://www.figma.com/file/ZKILoCoIoy1IESdBpq3GNC/FrontendTesting?node-id=5530%3A0):
+
+1. **Login Page**
+2. **Dashboard Page**
+3. **User Page**
+4. **User Details Page**
+
+**Specific Requirements:**
+
+- User pages must pull data from a **mock API with 500 records**.
+- Store and retrieve user details using **Local Storage or IndexedDB**.
+- Fully **mobile responsive** across all screen sizes.
+- Follow best practices in **TypeScript, React, and SCSS**.
+- Pay attention to **details not explicitly specified** in the instructions.
+
+---
+
+## Tech Stack
+
+- **Frontend Framework:** React (optionally with a framework like Next.js)
+- **Language:** TypeScript (mandatory)
+- **Styling:** SCSS (Sass)
+- **Mock API:** JSON server, mocky.io, or json-generator.com
+- **State Management:** React Query / Context API / localStorage
+- **Testing:** Jest / React Testing Library
+
+---
+
+## Setup & Installation
 
 ```bash
+# Clone the repo
+git clone https://github.com/cynthia-abah/lendsqr-fe-test.git
+
+# Navigate to project
+cd lendsqr-fe-test
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app should now be available at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+<!-- app router next js structure  -->
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Responsive Design:** Mobile-first, adapts to all screen sizes
+- **User Management:** Display user list with filters and search
+- **User Details:** Detailed user info stored in local storage
+- **Tabs & Modals:** Using HeadlessUI for accessibility
+- **Mock Data:** 500 user records with realistic data
+- **Visual Fidelity:** Pixel-perfect match to Figma design
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Mock API
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Data is fetched from data mocked using **JSON Generator**.
+- Example user object:
 
-# lendsqr-fe-test
+```json
+{
+  "_id": "69750c5ac3a39646f401e526",
+  "organization": "Farmage",
+  "username": "Mcknight Horne",
+  "email": "mcknighthorne@farmage.com",
+  "phone": "+234 7885695818",
+  "date_joined": "2022-09-23T09:06:28-01:00",
+  "status": "Active",
+  "tier": 3,
+  "account_balance": "₦485,412.60",
+  "bank_details": "8890751426/Miraclis Bank",
+  "personal_information": { ... },
+  "education_and_employment": { ... },
+  "socials": { ... },
+  "guarantors": [ ... ]
+}
+```
+
+---
+
+## Testing
+
+- Positive and negative scenario testing implemented using **Vitest** and **React Testing Library**.
+- Test cases cover:
+  - Rendering components
+  - API fetches and error handling
+  - Local storage persistence
+  - Conditional rendering
+
+---
+
+## Deployment
+
+The app is deployed on vercel:
+
+```
+https://cynthia-abah-lendsqr-fe-test-rose.vercel.app
+
+```
+
+---
+
+## Submission
+
+- Public GitHub repo named `lendsqr-fe-test`.
+- README documentation (this file).
+- Optional Loom video review (max 3 minutes) comparing Figma vs implementation.
+
+---

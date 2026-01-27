@@ -61,7 +61,7 @@ export const Sidebar = () => {
                 onClick={() => logout()}
                 disabled={isPending}
                 > 
-                <LogOut /> 
+                <Icons.logout /> 
                 <span>{isPending ? 'Logging out' : 'Logout'}</span>
                 </button>
 

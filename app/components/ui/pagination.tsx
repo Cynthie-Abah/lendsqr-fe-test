@@ -3,7 +3,6 @@ import { Table } from '@tanstack/react-table';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
-import { Button } from './button';
 import LimitSetter from './limit-setter';
 import '../../styles/components/pagination.scss'
 import { getPageNumbers } from '@/app/lib/utils';

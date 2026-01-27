@@ -73,17 +73,12 @@
         }
     }
     &__v {
-        text-decoration: none;
         padding: 0 1.5rem;
-        color: rgba($blue-200, 0.3);
+        font-family: Work Sans;
         font-weight: 400;
-        padding: 0 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: .7rem;
-        font-size: 16px;
-        cursor: pointer;
-        height: 40px;
+        font-size: 12px;
+        color: $blue-200;
+        padding-bottom: 1rem;
     }
     .switch-org-btn {
             color:$blue-200;
@@ -109,14 +104,20 @@
         line-height: 100%;
     }
     .logout-btn {
-        color: $red-500;
-        font-weight: 500;
-        font-family: 'Work Sans';
-        font-size: 16px;
-        display: flex;
-        gap: .7rem;
-        cursor: pointer !important;
-        align-items: center;
+        color: $blue-200;
+            display: flex;
+            align-items: center;
+            gap: .7rem;
+            padding-bottom: .5rem;
+            font-size: 16px;
+            font-family: 'Work Sans';
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            cursor: pointer;
+            margin-top: 2.5rem;
+            border-top: 1px solid rgba($blue-300, 0.2);
+            padding-top: 1.2rem;
         
             &:hover {
                 filter: opacity(.7);

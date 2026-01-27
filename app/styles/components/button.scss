@@ -2,14 +2,14 @@
 
 $button-variants: (
     default: (bg: $teal-300,
-        color: $white-200,
+        color: #fff,
         hover-bg: rgba($teal-300, 0.8),
         active-bg: rgba($teal-300, 1.8),
         disabled-bg: rgba($teal-300, 0.8),
     ),
 
     destructive: (bg: $error,
-        color: '#fff',
+        color: #fff,
         hover-bg: $error,
         active-bg: $error,
     ),
@@ -17,11 +17,12 @@ $button-variants: (
     outline: (bg: transparent,
         color: $teal-300,
         border: 1px solid $teal-300,
-        hover-bg: $teal-300,
+        hover-bg: rgba($teal-300, 0.6),
+        hover-color: #fff,
     ),
 
     outline-gray: (bg: transparent,
-        color: '#000',
+        color: #000,
         border: 1px solid $gray-400,
         hover-bg: $teal-300,
     ),
@@ -61,6 +62,7 @@ $button-sizes: (
 
     &:hover {
         background: map-get($styles, hover-bg);
+        color: map-get($styles, hover-color)
     }
 
     &:active {
