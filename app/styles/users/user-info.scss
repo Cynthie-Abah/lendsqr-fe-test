@@ -1,23 +1,23 @@
-@use '../../globals.scss' as *;
+@use "../../globals.scss" as *;
 
-.user-information{
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.user-information {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 
-    &__heading{
-        font-family: 'Work Sans';
-        font-weight: 500;
-        font-size: 16px;
-        text-transform: capitalize;
-        color: $blue-200;
-    }
+  &__heading {
+    font-family: "Work Sans";
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: $blue-200;
+  }
 
-    &__flex{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(50px, 200px));
-            justify-content: start;
-        column-gap: clamp(1rem, 4vw, 4rem);
-        row-gap: 2rem;
-    }
+  &__flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 200px));
+    justify-content: start;
+    column-gap: clamp(1rem, 4vw, 4rem);
+    row-gap: 2rem;
+  }
 }
