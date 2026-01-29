@@ -35,20 +35,22 @@ const onSubmit =  (data: User) => {
             <h2>Welcome!</h2>
             <p>Enter details to login.</p>
             <div className="input-container">
-
+                <label htmlFor="email" hidden>email</label>
                 <Input
+                id='email'
                 type='email'
                 className='input' 
                 placeholder='Email'
                 {...register('email', { required: 'Email is required' })}
                 />
                 {errors.email &&
-                <p className='error'>
+                <p role="alert" className='error'>
                     <AlertCircle width={15} height={15} /> 
                     {errors.email.message}
                 </p>}
-
+                <label htmlFor="password" hidden>password</label>
                 <Input 
+                id='password'
                 className='input' 
                 placeholder='Password' 
                 inputType='password'
@@ -56,7 +58,7 @@ const onSubmit =  (data: User) => {
                 />
                 {
                 errors.password && 
-                <p className='error'>
+                <p role="alert" className='error'>
                     <AlertCircle width={15} height={15} /> 
                     {errors.password.message}
                 </p>}
@@ -70,8 +72,8 @@ const onSubmit =  (data: User) => {
 
                 <Button 
                 type='submit'
-                disabled={isLoading}>
-                    { isLoading ? 'logging in...' : 'log in'}
+                disabled={isLoading || isPending}>
+                    { isLoading || isPending ? 'logging in...' : 'log in'}
                 </Button>
             </div>
         </form>

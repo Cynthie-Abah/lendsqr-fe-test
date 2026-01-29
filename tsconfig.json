@@ -18,9 +18,10 @@
         "name": "next"
       }
     ],
-    "paths": {
-      "@/*": ["./*"]
-    }
+"paths": {
+  "@/*": ["./*"]
+},
+"types": ["vitest/globals"]
   },
   "include": [
     "next-env.d.ts",
@@ -29,6 +30,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/(protected)/customers/users/[id]"  ],
+  ],
   "exclude": ["node_modules"]
 }

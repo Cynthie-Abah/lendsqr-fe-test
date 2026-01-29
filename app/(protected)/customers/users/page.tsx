@@ -1,18 +1,17 @@
-import '../../../styles/users/user.scss'
-import { UserTable } from '@/app/components/users/user-table'
-import { UsersOverview } from '@/app/components/users/users-overview';
+import "../../../styles/users/user.scss";
+import { UserTable } from "@/app/components/users/user-table";
+import { UsersOverview } from "@/app/components/users/users-overview";
 
-const page = async () => {
+const Users = async () => {
   return (
-    <div className='users'>
+    <div className="users">
       <h2>Users</h2>
 
-        <UsersOverview />
-  
-        <UserTable />
-      
-    </div>
-  )
-}
+      <UsersOverview />
 
-export default page
+      <UserTable />
+    </div>
+  );
+};
+
+export default Users;

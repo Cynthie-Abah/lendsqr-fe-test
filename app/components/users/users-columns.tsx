@@ -4,15 +4,16 @@ import { format } from "date-fns";
 import { UserStatus } from "../ui/user-status";
 import { UserMenu } from "./user-menu";
 import { organizationOptions, statusOptions } from "@/app/lib/constants";
+import { Organization, UserStatus as UserStatusType } from "@/app/types/types";
 
 export type User = {
     _id: string,
-    organization: string,
+    organization: Organization,
     username: string,
     email: string,
     phone: string,
     date_joined: string,
-    status: "Active" | "Inactive" | "Blacklisted" | "Pending",
+    status: UserStatusType,
 }
 
   export const userColumns: ColumnDef<User>[] = [

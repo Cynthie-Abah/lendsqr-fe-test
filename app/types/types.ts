@@ -64,11 +64,12 @@ export interface Guarantor {
 }
 
 export type UserStatus = "Active" | "Inactive" | "Pending" | "Blacklisted";
+export type Organization = "Lendsqr" | "Irorun" | "Lendstar"
 
 export interface UserDetails {
   _id: string;
   index: number;
-  organization: string;
+  organization: Organization;
   username: string;
   email: string;
   phone: string;
