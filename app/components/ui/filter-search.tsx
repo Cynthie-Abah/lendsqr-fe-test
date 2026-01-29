@@ -110,7 +110,7 @@ export const FilterSearch = ({ columnDetails }: FilterSearchProps) => {
                         key: columnDetails.id,
                         value: filterValue,
                       });
-                      setFilterValue("");
+                      // setFilterValue("");
                       close();
                     }
                   }}
