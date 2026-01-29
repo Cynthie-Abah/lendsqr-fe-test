@@ -9,5 +9,6 @@ import {
 import { userEvent } from "@testing-library/user-event";
 
 describe("user-details", () => {
-  it("should render correct name and value", () => {});
+  it("should render user details correctly", () => {});
+  it("should update status btn should open modal ", () => {});
 });

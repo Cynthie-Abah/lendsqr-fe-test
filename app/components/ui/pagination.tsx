@@ -26,16 +26,17 @@ export function DataTablePagination<TData>({ table }: { table: Table<TData> }) {
     } else {
       table.setPageIndex(0);
     }
-  }, []);
+  }, [searchParams]);
 
   const createQueryString = useCallback(
     (value: string | number) => {
+      table.setPageIndex(Number(value) - 1);
+
       const params = new URLSearchParams(searchParams.toString());
       params.set("page", `${value}`);
       router.push(pathname + "?" + params.toString());
-      table.setPageIndex(Number(value) - 1);
     },
-    [searchParams, pathname, router, table],
+    [searchParams.toString(), pathname, router, table],
   );
 
   return (
@@ -61,9 +62,9 @@ export function DataTablePagination<TData>({ table }: { table: Table<TData> }) {
           {getPageNumbers(
             table.getState().pagination.pageIndex + 1,
             table.getPageCount(),
-          ).map((page) =>
+          ).map((page, index) =>
             page === "..." ? (
-              <span key={page} className="pagination-ellipsis">
+              <span key={page + index} className="pagination-ellipsis">
                 ...
               </span>
             ) : (
