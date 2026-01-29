@@ -29,7 +29,7 @@ Build the following pages based on the [Figma Design](https://www.figma.com/file
 **Specific Requirements:**
 
 - User pages must pull data from a **mock API with 500 records**.
-- Store and retrieve user details using **Local Storage or IndexedDB**.
+- Store and retrieve user details using **Local Storage**.
 - Fully **mobile responsive** across all screen sizes.
 - Follow best practices in **TypeScript, React, and SCSS**.
 - Pay attention to **details not explicitly specified** in the instructions.
@@ -38,12 +38,12 @@ Build the following pages based on the [Figma Design](https://www.figma.com/file
 
 ## Tech Stack
 
-- **Frontend Framework:** React (optionally with a framework like Next.js)
+- **Frontend Framework:** React ( Next.js)
 - **Language:** TypeScript (mandatory)
 - **Styling:** SCSS (Sass)
-- **Mock API:** JSON server, mocky.io, or json-generator.com
-- **State Management:** React Query / Context API / localStorage
-- **Testing:** Jest / React Testing Library
+- **Mock API:** json-generator.com
+- **State Management:** React Query / localStorage
+- **Testing:** Vitest / React Testing Library
 
 ---
 
@@ -100,7 +100,7 @@ Password: 12345678
 ```json
 {
   "_id": "69750c5ac3a39646f401e526",
-  "organization": "Farmage",
+  "organization": "Lendsqr",
   "username": "Mcknight Horne",
   "email": "mcknighthorne@farmage.com",
   "phone": "+234 7885695818",
