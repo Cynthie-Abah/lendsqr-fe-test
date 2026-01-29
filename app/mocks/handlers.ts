@@ -3,12 +3,6 @@ import { http, HttpResponse } from "msw";
 const AUTH_API_URL = process.env.NEXT_PUBLIC_LOGIN_API!;
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL!;
-// try {
-//     const request = await fetch(API_URL, {
-//     method: 'GET',
-//     headers: {
-//         'Content-Type': 'application/json',
-//     }
 
 export const handlers = [
   http.get(AUTH_API_URL, () => {
